@@ -10,7 +10,7 @@
 <body>
 	<form id="register_form" action="index.php" method="post">
 		<table>
-			<tr><td>Name:</td><td><input id="tx_name" type="text" onFocus="this.select();"/></td></tr>
+			<tr><td>Name</td><td><input id="tx_name" type="text" onFocus="this.select();"/></td></tr>
 			<tr><td>Email</td><td><input id="tx_email" type="text" onFocus="this.select();"/></td></tr>
 			<tr><td>Phone</td><td><input id="tx_phone" type="text" onFocus="this.select();"/></td></tr>
 			<tr><td>Password</td><td><input id="tx_password" type="password" onFocus="this.select();"/></td></tr>
