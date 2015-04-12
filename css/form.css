@@ -1,4 +1,4 @@
-.input[type='submit'] {
+input[type='submit'] {
 	float: right;
 	background-color: #818181;
 	color: #d5d5d5;
@@ -9,6 +9,6 @@
 	margin: 0;
 	padding: 0 10px;
 }
-.td {
+td {
 	text-align: right;
 }
