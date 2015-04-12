@@ -1,4 +1,4 @@
-.message input[type='text'], input[type='password'] {
+.form input[type='text'], input[type='password'] {
 	color: #aeaeae;
 	font-size: 13px;
 	height: 33px;
@@ -8,7 +8,7 @@
 	margin: 0 0 6px;
 	padding: 0 4px;
 }
-.message input[type='submit'] {
+.form input[type='submit'] {
 	float: right;
 	background-color: #818181;
 	color: #d5d5d5;
