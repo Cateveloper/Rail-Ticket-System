@@ -24,7 +24,7 @@
 			<span id='login_username_errorloc' class='error'></span>
 		</div>
 		<div class='container'>
-			<label for='email' >Email*:</label><br/>
+			<label for='email' >Email*:(use as login ID)</label><br/>
 			<input type='text' name='tx_email' id='tx_email' maxlength="100" /><br/>
 			<span id='login_email_errorloc' class='error'></span>
 		</div>
