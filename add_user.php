@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$password = ($_POST['tx_password']);
 
 	$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".$password."')";
-	
+	echo $insert_query;
 	$result = DB_Query ($insert_query);
 	
 	echo $result;
