@@ -8,14 +8,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$phone = ($_POST['tx_phone']);
 	$password = ($_POST['tx_password']);
 
-	$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".md5($password)."')";
-
-	$result = DB_Query ($insert_query);
+	$check_duplicate = "SELECT * FROM users WHERE email = '".$email."'";
 	
-	if($result != false)
-		echo "<a href='index.php'>insert success</a>";
+	$result_dup = DB_Query ($insert_query);
+	
+	$row_count = $result_dup->num_rows;
+	
+	if($row_count == 0 )
+	{
+		$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".md5($password)."')";
+
+		$result = DB_Query ($insert_query);
+		
+		if($result != false)
+			echo "<a href='index.php'>insert success</a>";
+		else
+			echo "<a href='index.php'>insert failed</a>";
+	}
 	else
-		echo "<a href='index.php'>insert failed</a>";
+	{
+		echo "Oops, someone has the same email like you. Please change another email address.<br/>";
+		echo "<a href='javascript:history.back()'>Go Back</a>";
+	}
 }
 
 ?>
