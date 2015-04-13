@@ -2,21 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="/css/form.css" type="text/css">
-	<script src="/js/jquery-1.11.2.min.js"></script>	
-	<script src="/js/register.js"></script>
+	<link rel="stylesheet" href="css/form.css" type="text/css">
+	<script src="js/jquery-1.11.2.min.js"></script>	
+	<script src="js/register.js"></script>
 	<title>Rail Tickets System</title>
 </head>
 <body>
+	<div id="content">
 	<form id="register_form" action="index.php" method="post">
-		<table>
-			<tr><td>Name</td><td><input id="tx_name" type="text" onFocus="this.select();"/></td></tr>
-			<tr><td>Email</td><td><input id="tx_email" type="text" onFocus="this.select();"/></td></tr>
-			<tr><td>Phone</td><td><input id="tx_phone" type="text" onFocus="this.select();"/></td></tr>
-			<tr><td>Password</td><td><input id="tx_password" type="password" onFocus="this.select();"/></td></tr>
-			<tr><td>Re-enter Password</td><td><input id="tx_password_chk" type="password" onFocus="this.select();"/></td></tr>
-			<tr><td colspan="2"><input id="register_submit" type="submit" value="Send"/></td></tr>
-		</table>
+	
+		<fieldset >
+		<legend>Register</legend>
+
+		<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+		<div class='short_explanation'>* required fields</div>
+		
+		<div class='container'>
+			<label for='username' >Name*:</label><br/>
+			<input type='text' name='tx_name' id='tx_name' maxlength="50" />
+			<span id='login_username_errorloc' class='error'></span>
+		</div>
+		<div class='container'>
+			<label for='email' >Email*:</label><br/>
+			<input type='text' name='tx_email' id='tx_email' maxlength="100" /><br/>
+			<span id='login_email_errorloc' class='error'></span>
+		</div>
+		<div class='container'>
+			<label for='phone' >Phone:</label><br/>
+			<input type='text' name='tx_phone' id='tx_phone' maxlength="50" /><br/>
+			<span id='login_phone_errorloc' class='error'></span>
+		</div>
+		<div class='container'>
+			<label for='password' >Password*:</label><br/>
+			<input type='password' name='tx_password' id='tx_password' maxlength="50" /><br/>
+			<span id='login_password_errorloc' class='error'></span>
+		</div>		
+		<div class='container'>
+			<label for='password' >Re-enter Password*:</label><br/>
+			<input type='password' name='tx_password_chk' id='tx_password_chk' maxlength="50" /><br/>
+			<span id='login_passwordck_errorloc' class='error'></span>
+		</div>
+		
+		<div class='container'>
+			<input type='submit' name='Submit' value='Submit' />
+		</div>
+		</fieldset>	
 	</form>
+	</div>
 </body>
 </html>
