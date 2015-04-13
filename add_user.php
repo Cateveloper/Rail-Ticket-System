@@ -1,5 +1,5 @@
 <?php
-require_once("utility.php");
+include 'utility.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	
 	$result = DB_Query ($insert_query);
 	
-	echo $result
+	echo $result;
 	
 	if($result != false)
 		echo "<a href='index.php'>insert success</a>";
