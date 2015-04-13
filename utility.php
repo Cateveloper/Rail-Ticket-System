@@ -1,5 +1,7 @@
 <?PHP
 
+$rand_key = '15qtUcnKB4r0Chf';
+
 function DB_Query ($sql)
 {
     $host_name = 'us-cdbr-azure-southcentral-e.cloudapp.net';
@@ -17,6 +19,19 @@ function DB_Query ($sql)
 
     mysqli_close($con);
     return $result;
+}
+
+function Redirect ($url)
+{
+    header("Location: $url");
+    exit;
+}
+
+function GetLoginSessionVar()
+{
+    $ret_var = md5($rand_key);
+    $ret_var = 'usr_'.substr($ret_var, 0, 10);
+    return $ret_var;
 }
 
 ?>

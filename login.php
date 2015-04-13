@@ -1,16 +1,24 @@
 <?PHP
+require_once("./utility.php");
+
+if (isset($_POST['submitted']))
+{
+    Login();
+    Redirect("index.php");
+}
+
 
 function Login()
 {
-    if(empty($_POST['username']))
+    if (empty($_POST['username']))
     {
-        //$this->HandleError("UserName is empty!");
+        echo 'no user name';
         return false;
     }
      
-    if(empty($_POST['password']))
+    if (empty($_POST['password']))
     {
-        //$this->HandleError("Password is empty!");
+        echo 'no password';
         return false;
     }
      
@@ -24,34 +32,53 @@ function Login()
 
     if(!CheckPWD($username, $password))
     {
+        echo 'user name and password not matched';
         return false;
     }
      
-    $_SESSION[$this->GetLoginSessionVar()] = $username;
+    $_SESSION[GetLoginSessionVar()] = $username;
      
     return true;
 }
 
-function CheckPWD($user_name, $password)
+function CheckPWD ($user_name, $password)
 {
-    $table_name = 'table';
+    $table_name = 'users';
 
     $pwdmd5 = md5($password);
-    $sql = "Select name, email from $table_name where username='$user_name' and password='$pwdmd5' and confirmcode='y'";
+    $sql = "SELECT user_name, admin FROM $table_name WHERE email='$user_name' AND password='$pwdmd5'";
+
+    //echo $sql . '<br>';
         
     $result = DB_Query($sql);
-        
-    if(!$result || mysql_num_rows($result) <= 0)
+
+    if (!$result || mysqli_num_rows($result) <= 0)
     {
-        //$this->HandleError("Error logging in. The username or password does not match");
         return false;
     }
         
     $row = mysql_fetch_assoc($result);
 
-    $_SESSION['name_of_user']  = $row['name'];
-    $_SESSION['email_of_user'] = $row['email'];
+    $_SESSION['user_name'] = $row['user_name'];
+    $_SESSION['admin'] = $row['admin'];
         
+    return true;
+}
+
+function CheckLogin ()
+{
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+
+    $session_var = GetLoginSessionVar();
+
+    if(empty($_SESSION[$session_var]))
+    {
+        return false;
+    }
+
     return true;
 }
 
