@@ -3,10 +3,10 @@ include 'utility.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	$name = ($_POST['tx_name']);
-	$email = ($_POST['tx_email']);
-	$phone = ($_POST['tx_phone']);
-	$password = ($_POST['tx_password']);
+	$name = trim($_POST['tx_name']);
+	$email = trim($_POST['tx_email']);
+	$phone = trim($_POST['tx_phone']);
+	$password = trim($_POST['tx_password']);
 
 	$check_duplicate = "SELECT * FROM users WHERE email = '".$email."'";
 	
@@ -21,9 +21,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		$result = DB_Query ($insert_query);
 		
 		if($result != false)
-			echo "<a href='index.php'>insert success</a>";
+			Redirect('index.php');
 		else
-			echo "<a href='index.php'>insert failed</a>";
+		{
+			echo "Oops, we couldn't register you now. Please try again. (If this keeps show up, please contact administrator.)<br/>";
+			echo "<a href='javascript:history.back()'>Go Back</a>";
+		}
 	}
 	else
 	{
