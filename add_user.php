@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$phone = ($_POST['tx_phone']);
 	$password = ($_POST['tx_password']);
 
-	$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".$password."')";
+	$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".md5($password)."')";
 
 	$result = DB_Query ($insert_query);
 	
