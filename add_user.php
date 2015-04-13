@@ -1,5 +1,5 @@
 <?php
-include 'utility.php';
+require_once("utility.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -11,6 +11,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".$password."')";
 	
 	$result = DB_Query ($insert_query);
+	
+	echo $result
 	
 	if($result != false)
 		echo "<a href='index.php'>insert success</a>";
