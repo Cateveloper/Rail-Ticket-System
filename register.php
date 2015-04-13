@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="content">
-	<form id="register_form" action="index.php" method="post">
+	<form id="register_form" action="add_user.php" method="post">
 	
 		<fieldset >
 		<legend>Register</legend>
