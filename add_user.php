@@ -10,10 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 	$check_duplicate = "SELECT * FROM users WHERE email = '".$email."'";
 	
-	$result_dup = DB_Query ($insert_query);
+	$result_dup = DB_Query ($check_duplicate);
 	
 	$row_count = $result_dup->num_rows;
 	
+	echo "row_count:".$row_count;
 	if($row_count == 0 )
 	{
 		$insert_query = "INSERT INTO users(user_name, email, phone, password) VALUES('".$name."','".$email."','".$phone."','".md5($password)."')";
