@@ -1,6 +1,10 @@
 <?PHP
 require_once("./utility.php");
 
+define("NOT_LOGIN", 0);
+define("IS_ADMIN", 1);
+define("IS_USER", 2);
+
 if (isset($_POST['submitted']))
 {
     Login();
@@ -57,29 +61,36 @@ function CheckPWD ($user_name, $password)
         return false;
     }
         
-    $row = mysql_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);
 
     $_SESSION['user_name'] = $row['user_name'];
     $_SESSION['admin'] = $row['admin'];
+
+    echo '' . $row['admin'];
         
     return true;
 }
 
 function CheckLogin ()
 {
-    if(!isset($_SESSION))
+    if (!isset($_SESSION))
     {
         session_start();
     }
 
     $session_var = GetLoginSessionVar();
 
-    if(empty($_SESSION[$session_var]))
+    if (empty($_SESSION[$session_var]))
     {
-        return false;
+        return NOT_LOGIN;
     }
 
-    return true;
+    if (1 == $_SESSION['admin'])
+    {
+        return IS_ADMIN;
+    }
+
+    return IS_USER;
 }
 
 ?>

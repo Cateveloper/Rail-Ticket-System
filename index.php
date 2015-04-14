@@ -1,15 +1,19 @@
 <?PHP
 require_once("./login.php");
 
-$login_status = 0;
+$login_status = CheckLogin();
 
-if (CheckLogin())
+if (NOT_LOGIN == $login_status)
 {
-
+    echo 'not login<br>';
+}
+else if (IS_ADMIN == $login_status)
+{
+    echo 'is admin<br>';
 }
 else
 {
-    $login_status = 0;
+    echo 'is user<br>';
 }
 
 ?>
