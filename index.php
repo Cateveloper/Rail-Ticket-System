@@ -42,6 +42,10 @@ if (NOT_LOGIN == $login_status)
         <div class='short_explanation'>
             <a href='reset-pwd-req.php'>Forgot Password?</a>
         </div>
+		
+        <div class='short_explanation'>
+            <a href='register.php'>New User</a>
+        </div>		
         </fieldset>
         </form>
 
@@ -80,7 +84,10 @@ else
         <div class='container'>
             <label for='order_history' ><a href='register.php'>Order History</a></label>
         </div>
-
+		<hr/>
+        <div class='container'>
+            <a href='sign_out.php'>Sign Out</a>
+        </div>
         </fieldset>
 <?PHP
 }
