@@ -66,7 +66,22 @@ else if (IS_ADMIN == $login_status)
 else
 {
 ?>
+        <fieldset>
+        <legend>User Account</legend>
 
+        <div class='container'>
+            <label for='username' >Hi, XXXX !</label>
+        </div>
+		<hr/>
+        <div class='container'>
+            <label for='personal_info' ><a href='personal_info.php'>Personal Info</a></label>
+        </div>
+		<hr/>
+        <div class='container'>
+            <label for='order_history' ><a href='register.php'>Order History</a></label>
+        </div>
+
+        </fieldset>
 <?PHP
 }
 ?>

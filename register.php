@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="css/form.css" type="text/css">
 	<script src="js/jquery-1.11.2.min.js"></script>	
 	<script src="js/register.js"></script>
+	<script src="js/utility.js"></script>
 	<title>Rail Tickets System</title>
 </head>
 <body>
@@ -13,9 +14,7 @@
 	
 		<fieldset >
 		<legend>Register</legend>
-
-		<input type='hidden' name='submitted' id='submitted' value='1'/>
-
+		
 		<div class='short_explanation'>* required fields</div>
 		
 		<div class='container'>
