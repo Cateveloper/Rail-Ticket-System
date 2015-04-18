@@ -50,7 +50,7 @@ function CheckPWD ($user_name, $password)
     $table_name = 'users';
 
     $pwdmd5 = md5($password);
-    $sql = "SELECT user_name, admin FROM $table_name WHERE email='$user_name' AND password='$pwdmd5'";
+    $sql = "SELECT user_id, user_name, admin FROM $table_name WHERE email='$user_name' AND password='$pwdmd5'";
 
     //echo $sql . '<br>';
         
