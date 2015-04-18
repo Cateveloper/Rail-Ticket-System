@@ -8,14 +8,18 @@ $login_status = CheckLogin();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-      <title>Rail Tickets</title>
+      <title>Manage Train Routes</title>
       <link rel="STYLESHEET" type="text/css" href="css/form.css" />
 </head>
 <body>
     <div id='content'>
 
 <?PHP
-if (NOT_LOGIN == $login_status)
+if (IS_ADMIN != $login_status)
+{
+        Redirect("index.php");
+}
+else
 {
 ?>
         <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
@@ -44,29 +48,6 @@ if (NOT_LOGIN == $login_status)
         </div>
         </fieldset>
         </form>
-
-<?PHP
-}
-else if (IS_ADMIN == $login_status)
-{
-?>
-        <fieldset>
-        <legend>Admin</legend>
-        <div class='container'>
-            <a href='manage_route.php'>Manage Train Routes</a>
-        </div>
-
-        <div class='container'>
-            <a href='sign_out.php'>Sign Out</a>
-        </div>
-        </fieldset>
-
-<?PHP
-}
-else
-{
-?>
-
 <?PHP
 }
 ?>

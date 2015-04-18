@@ -66,7 +66,7 @@ function CheckPWD ($user_name, $password)
     $_SESSION['user_name'] = $row['user_name'];
     $_SESSION['admin'] = $row['admin'];
 
-    echo '' . $row['admin'];
+    //echo '' . $row['admin'];
         
     return true;
 }
