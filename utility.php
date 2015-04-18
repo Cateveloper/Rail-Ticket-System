@@ -29,6 +29,7 @@ function Redirect ($url)
 
 function GetLoginSessionVar()
 {
+	global $rand_key;
     $ret_var = md5($rand_key);
     $ret_var = 'usr_'.substr($ret_var, 0, 10);
     return $ret_var;
