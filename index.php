@@ -57,6 +57,10 @@ else if (IS_ADMIN == $login_status)
         <fieldset>
         <legend>Admin</legend>
         <div class='container'>
+            <a href='manage_station.php'>Manage Stations</a>
+        </div>
+
+        <div class='container'>
             <a href='manage_route.php'>Manage Train Routes</a>
         </div>
 

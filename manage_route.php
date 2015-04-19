@@ -9,7 +9,11 @@ $login_status = CheckLogin();
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
       <title>Manage Train Routes</title>
+      <link rel="STYLESHEET" type="text/css" href="datetimepicker-master/jquery.datetimepicker.css" />
       <link rel="STYLESHEET" type="text/css" href="css/form.css" />
+      <script src="js/jquery-1.11.2.min.js"></script>
+      <script src="js/manage_route.js"></script>
+      <script src="datetimepicker-master/jquery.datetimepicker.js"></script>
 </head>
 <body>
     <div id='content'>
@@ -22,30 +26,25 @@ if (IS_ADMIN != $login_status)
 else
 {
 ?>
-        <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+        <form id='route' action='update_route.php' method='post' accept-charset='UTF-8'>
         <fieldset>
-        <legend>Login</legend>
+        <legend>Manage Routes</legend>
         <input type='hidden' name='submitted' id='submitted' value='1'/>
 
         <div class='container'>
-            <label for='username' >User ID</label><br/>
-            <input type='text' name='username' id='username' value='' maxlength="50" /><br/>
-            <span id='login_username_errorloc' class='error'></span>
-        </div>
-
-        <div class='container'>
-            <label for='password' >Password</label><br/>
-            <input type='password' name='password' id='password' maxlength="50" /><br/>
-            <span id='login_password_errorloc' class='error'></span>
+            <table id='route_table' border="1">
+                <tr>
+                <td></td>
+                <td><button type="button" id="init_add_button">Add City</button></td>
+                <td></td>
+                </tr>
+            </table>
         </div>
 
         <div class='container'>
             <input type='submit' name='Submit' value='Submit' />
         </div>
 
-        <div class='short_explanation'>
-            <a href='reset-pwd-req.php'>Forgot Password?</a>
-        </div>
         </fieldset>
         </form>
 <?PHP

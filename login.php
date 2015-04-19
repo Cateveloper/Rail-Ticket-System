@@ -63,7 +63,7 @@ function CheckPWD ($user_name, $password)
         
     $row = mysqli_fetch_assoc($result);
 
-	$_SESSION['user_id'] = $row['user_id'];
+    $_SESSION['user_id'] = $row['user_id'];
     $_SESSION['user_name'] = $row['user_name'];
     $_SESSION['admin'] = $row['admin'];
 
