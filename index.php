@@ -78,8 +78,12 @@ else
         <legend>User Account</legend>
 
         <div class='container'>
-            <label for='username' >Hi, XXXX !</label>
+            <label for='username' >Hi, <?php echo $_SESSION['user_name']; ?> !</label>
         </div>
+		<hr/>
+        <div class='container'>
+            <label for='shop_cart' ><a href='shop_cart.php'>Shopping Cart</a></label>
+        </div>		
 		<hr/>
         <div class='container'>
             <label for='personal_info' ><a href='personal_info.php'>Personal Info</a></label>
