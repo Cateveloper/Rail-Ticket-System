@@ -10,10 +10,16 @@ $login_status = CheckLogin();
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
       <title>Rail Tickets</title>
       <link rel="STYLESHEET" type="text/css" href="css/form.css" />
+	  <script src="./js/jquery-1.11.2.min.js"></script>
+	  <script src="./js/jquery.cookie.js"></script>
+	  <script src="./js/index.js"></script>
 </head>
 <body>
     <div id='content'>
-
+		
+		<table>
+		<tr>
+		<td>
 <?PHP
 if (NOT_LOGIN == $login_status)
 {
@@ -100,5 +106,41 @@ else
 <?PHP
 }
 ?>
+		</td>
+		<td valign='top'>
+			<fieldset>
+			<legend>Search</legend>
+
+			<div class='container'>
+                <table id='result_table' border="1" width='100%'>
+                    <tr>
+						<th>Route ID</th>
+						<th>Start Station Name</th>
+						<th>Destination Station Name</th>
+						<th>Price</th>
+						<th>Available Tickets</th>
+                    <th></th>
+                    </tr>
+					<tr>
+						<td>123</td>
+						<td>Taipei</td>
+						<td>Taichung</td>
+						<td>1,000</td>
+						<td>500</td>
+						<td align="center"></td>
+					</tr>
+					<tr>
+						<td>456</td>
+						<td>Taipei</td>
+						<td>Taichung</td>
+						<td>1,000</td>
+						<td>500</td>
+						<td align="center"></td>
+					</tr>					
+				</table>	
+			</div>
+			</fieldset>		
+		</td>
+		</tr>
     </div>
 </body>
