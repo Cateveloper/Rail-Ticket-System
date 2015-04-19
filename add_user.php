@@ -1,5 +1,5 @@
 <?php
-include 'utility.php';
+include './utility.php';
 
 if(!isset($_GET["email"]))
 	add_user();

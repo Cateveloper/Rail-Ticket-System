@@ -88,7 +88,7 @@ function validateEmail(email) {
 
 var check_email = function () {
     return $.ajax({
-        type: "GET",
+        type: "POST",
         url: "add_user.php?email="+$('#tx_email').val(),
         async: false
     }).responseText;

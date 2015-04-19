@@ -1,3 +1,9 @@
+<?PHP
+require_once("./login.php");
+
+$login_status = CheckLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +52,10 @@
 		<div class='container'>
 			<input type='submit' name='Submit' value='Submit' />
 		</div>
+		
+        <div class='short_explanation'>
+            <a href='index.php'>Go back</a>
+        </div>		
 		</fieldset>	
 	</form>
 	</div>

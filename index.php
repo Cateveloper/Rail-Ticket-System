@@ -82,11 +82,11 @@ else
         </div>
 		<hr/>
         <div class='container'>
-            <label for='order_history' ><a href='register.php'>Order History</a></label>
+            <label for='order_history' ><a href='order_history.php'>Order History</a></label>
         </div>
 		<hr/>
         <div class='container'>
-            <a href='sign_out.php'>Sign Out</a>
+            <label for='sign_out' ><a href='sign_out.php'>Sign Out</a></label>
         </div>
         </fieldset>
 <?PHP
