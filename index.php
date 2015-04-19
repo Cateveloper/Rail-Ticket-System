@@ -19,7 +19,7 @@ $login_status = CheckLogin();
 		
 		<table>
 		<tr>
-		<td>
+		<td valign='top'>
 <?PHP
 if (NOT_LOGIN == $login_status)
 {
