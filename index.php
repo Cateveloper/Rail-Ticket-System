@@ -96,7 +96,7 @@ else
         </div>
 		<hr/>
         <div class='container'>
-            <label for='order_history' ><a href='order_history.php'>Order History</a></label>
+            <label for='order_history' ><a href='orderhead_view.php'>Order History</a></label>
         </div>
 		<hr/>
         <div class='container'>
@@ -111,30 +111,58 @@ else
 			<fieldset>
 			<legend>Search</legend>
 
+			<form id="search_form" action="search.php" method="post">
+				<div class='container'>
+					<table id='search_table' width='100%'>
+						<tr>
+							<td><label for='Departure_Station' >Departure Station</label></td><td><label for='Arrival_Station' >Arrival Station</label></td>
+						</tr>	
+						<tr>
+							<td><label for='Departure_Time' >Departure Time</label></td><td><label for='Arrival_Time' >Arrival Time</label></td>
+						</tr>	
+						<tr>
+							<td colspan='2'><label for='Departure_Date' >Departure Date</label></td>
+						</tr>							
+					</table>	
+				</div>	
+			</form>
+			
 			<div class='container'>
                 <table id='result_table' border="1" width='100%'>
                     <tr>
-						<th>Route ID</th>
-						<th>Start Station Name</th>
-						<th>Destination Station Name</th>
+						<th>Schedule ID</th>
+						<th>Route Number</th>
+						<th>Route Date</th>
+						<th>Departure Station Name</th>
+						<th>Arrival Station Name</th>
+						<th>Departure Time</th>
+						<th>Arrival Time</th>						
 						<th>Price</th>
 						<th>Available Tickets</th>
                     <th></th>
                     </tr>
 					<tr>
-						<td>123</td>
-						<td>Taipei</td>
-						<td>Taichung</td>
-						<td>1,000</td>
-						<td>500</td>
+						<td>1</td>
+						<td>1010</td>
+						<td>2015-04-25</td>
+						<td>Dallas</td>
+						<td>Houston</td>
+						<td>11</td>
+						<td>22</td>						
+						<td>46</td>
+						<td>100</td>
 						<td align="center"></td>
 					</tr>
 					<tr>
-						<td>456</td>
-						<td>Taipei</td>
-						<td>Taichung</td>
-						<td>1,000</td>
-						<td>500</td>
+						<td>2</td>
+						<td>1020</td>
+						<td>2015-04-30</td>
+						<td>Atlanta</td>
+						<td>Seattle</td>
+						<td>33</td>
+						<td>44</td>						
+						<td>35</td>
+						<td>100</td>
 						<td align="center"></td>
 					</tr>					
 				</table>	

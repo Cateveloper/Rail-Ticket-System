@@ -154,3 +154,7 @@ div#content {
 	border: 0px;
 	margin: 0 auto;
 }
+
+#content input[type="text"].num{
+	width:30px;
+}

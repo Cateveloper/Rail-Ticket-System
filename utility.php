@@ -1,13 +1,14 @@
 <?PHP
 
 $rand_key = '15qtUcnKB4r0Chf';
+$host_name = 'us-cdbr-azure-southcentral-e.cloudapp.net';
+$db_name = 'rail_tickets_db';
+$user_id = 'b76923aa07bae4';
+$user_pwd = 'f80b6765';
 
 function DB_Query ($sql)
 {
-    $host_name = 'us-cdbr-azure-southcentral-e.cloudapp.net';
-    $db_name = 'rail_tickets_db';
-    $user_id = 'b76923aa07bae4';
-    $user_pwd = 'f80b6765';
+    global $host_name, $db_name, $user_id, $user_pwd;
 
     $con = mysqli_connect($host_name, $user_id, $user_pwd, $db_name);
     if (!$con) {
