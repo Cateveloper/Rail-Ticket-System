@@ -230,19 +230,23 @@ function DeleteRoute ()
     }
 
     $route_id = $_POST['route_id'];
+
     $sql = "UPDATE railroad_head SET is_delete=1 WHERE railroad_head_id=$route_id";
-
     $result = DB_Query($sql);
-
     if (!$result)
     {
         return DB_QUERY_FAILED;
     }
 
     $sql = "UPDATE railroad_detail SET is_delete=1 WHERE railroad_head_id=$route_id";
-
     $result = DB_Query($sql);
+    if (!$result)
+    {
+        return DB_QUERY_FAILED;
+    }
 
+    $sql = "UPDATE schedule SET is_delete=1 WHERE railroad_head_id=$route_id";
+    $result = DB_Query($sql);
     if (!$result)
     {
         return DB_QUERY_FAILED;
