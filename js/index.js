@@ -17,6 +17,7 @@ $(document).ready(function() {
     });	
 	
 	$("#search_form").submit(search_confirm);
+	
 });
 
 function add_button(){
@@ -97,5 +98,5 @@ function add_to_cart(item_id, item_date, last_td, item_price){
 }
 
 function search_confirm(){
-
+	return true;
 }
