@@ -78,7 +78,7 @@ if ($login_status == NOT_LOGIN)
 									$train_total_qty = intval($row["number_seats"]);
 								}
 								
-								$sql = "SELECT COUNT(qty) AS order_qty FROM order_detail WHERE is_delete = 0 AND item_id = $item_id AND ticket_date = $item_date";
+								$sql = "SELECT SUM(qty) AS order_qty FROM order_detail WHERE is_delete = 0 AND item_id = $item_id AND ticket_date = $item_date";
 								$result_order_qty = DB_Query($sql);
 								if ($result_order_qty && mysqli_num_rows($result_order_qty) > 0)
 								{

@@ -60,6 +60,8 @@ else
 		mysqli_commit($con);
 		
 		mysqli_close($con);	
+		
+		setcookie("shopping_cart", "", time()+3600);
 	}
 }		
 ?>
@@ -92,7 +94,6 @@ else
 						<th>Arrival Time</th>							
 						<th>Price</th>
 						<th>Qty</th>
-						<th></th>
                     </tr>
 <?php
 					if($order_head_id > 0)
@@ -120,7 +121,6 @@ else
 									<td><?php echo $row["arrival_time"]; ?></td>
 									<td><?php echo $row["unit_price"]; ?></td>
 									<td><?php echo $row["qty"]; ?></td>
-									<td align="center"></td>
 								</tr>
 <?php
 								$total_qty += intval($row["qty"]);
