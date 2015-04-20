@@ -1,5 +1,22 @@
 $(document).ready(function() {
 	add_button();
+	
+	$('#d_time').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });
+	
+	$('#a_time').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });	
+	
+	$('#d_date').datetimepicker({
+        timepicker:false,
+        format:'Y-m-d'
+    });	
+	
+	$("#search_form").submit(search_confirm);
 });
 
 function add_button(){
@@ -77,4 +94,8 @@ function add_to_cart(item_id, item_date, last_td, item_price){
 	
 	last_td.children().first().remove();
 	last_td.append('<img id="theImg" src="./image/check.jpg" />');
+}
+
+function search_confirm(){
+
 }

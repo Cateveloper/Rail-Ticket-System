@@ -156,5 +156,10 @@ div#content {
 }
 
 #content input[type="text"].num{
-	width:30px;
+	width:50px;
+}
+
+select {
+	height:36px;
+	-webkit-border-radius:5px;
 }
