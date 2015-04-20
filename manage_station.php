@@ -8,7 +8,7 @@ $login_status = CheckLogin();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-      <title>Manage Train Routes</title>
+      <title>Manage Stations</title>
       <link rel="STYLESHEET" type="text/css" href="css/form.css" />
       <script src="js/jquery-1.11.2.min.js"></script>
       <script src="js/jquery.redirect.js"></script>
@@ -222,7 +222,7 @@ else
             </div>
 
             <div class='container'>
-                <input type='submit' name='Submit' value='Add' />
+                <input type='submit' name='Submit' value='Add Station' />
             </div>
         
             <div class='short_explanation'>
