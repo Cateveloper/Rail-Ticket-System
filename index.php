@@ -125,6 +125,8 @@ else
 
 			<form id="search_form" action="index.php" method="post">
 				<input type='hidden' name='searched' id='searched' value='1'/>
+				
+				<div class='short_explanation'>* required fields</div>
 				<div class='container'>
 					<table id='search_table' width='100%'>
 						<tr>
@@ -178,7 +180,7 @@ else
 							<td><input type="text" id="a_time" class="num" name="a_time" /></td>
 						</tr>	
 						<tr>
-							<td><label for='Departure_Date' >Departure Date</label></td>
+							<td><label for='Departure_Date' >Departure Date*</label></td>
 							<td><input type="text" id="d_date" name="d_date" /></td>
 							<td></td>
 							<td></td>
