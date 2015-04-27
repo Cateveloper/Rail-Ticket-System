@@ -14,7 +14,7 @@ function Search()
 
 		$insert_query = "SELECT schedule_id, railroad_number, '".$d_date."' AS d_date, (SELECT city_name FROM city WHERE city_id = schedule.departure_city_id) as departure_city, " .
 						" (SELECT city_name FROM city WHERE city_id = schedule.arrival_city_id) as arrival_city, " .
-						" departure_time, arrival_time, price FROM schedule WHERE 1=1 ";
+						" departure_time, arrival_time, price FROM schedule WHERE is_delete = 0 ";
 
 		if($d_city != "")
 			$insert_query = $insert_query . " AND departure_city_id = $d_city ";

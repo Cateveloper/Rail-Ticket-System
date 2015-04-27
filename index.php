@@ -58,10 +58,6 @@ if (NOT_LOGIN == $login_status)
         </div>
 
         <div class='short_explanation'>
-            <a href='reset-pwd-req.php'>Forgot Password?</a>
-        </div>
-		
-        <div class='short_explanation'>
             <a href='register.php'>New User</a>
         </div>		
         </fieldset>
