@@ -2,7 +2,69 @@
 
 function UpdateRoute (button)
 {
-    alert("not finished yet");
+    var route_id = button.parentNode.parentNode.firstChild.innerText;
+    var route_number = button.parentNode.parentNode.children[1].innerText;
+
+    var data = {
+        "action": "request_route_info",
+        "route_id": route_id
+    };
+
+    $.ajax({
+        type: "POST",
+        dateType: "text",
+        url: "manage_route.php",
+        data: data,
+        async: false,
+        success: function(ret_data) {
+
+            if (!ret_data)
+            {
+                alert("no route info");
+                return;
+            }
+
+            var route_info = JSON.parse(ret_data);
+
+            $('#route_info').find("tr:gt(0)").remove();
+
+            var cur_row = $('#route_info tr:first');
+            var station_count = route_info["count"];
+
+            for (var station_idx = 0; station_idx < station_count; ++station_idx)
+            {
+                var city_row = CreateCityRow();
+                var station_info = route_info["station_" + station_idx];
+                var departure_city_id = parseInt(station_info["departure_city_id"]);
+                var departure_time = station_info["departure_time"];
+                var price = station_info["price"];
+
+                city_row.children('td').eq(1).children('select').first().val(departure_city_id);
+                city_row.children('td').eq(2).children('input').first().val(departure_time);
+
+                cur_row.after(city_row);
+
+                var connect_row;
+                if (station_idx == station_count - 1)
+                {
+                    connect_row = CreateConnectRow(true);
+                }
+                else
+                {
+                    connect_row = CreateConnectRow();
+                    connect_row.children('td').eq(2).children('input').first().val(price);
+                }
+                city_row.after(connect_row);
+
+                cur_row = connect_row;
+            }
+
+            $('#route_number').val(route_number);
+            $('#route_id').val(route_id);
+            $('#submit_button').val('Update Route');
+            //alert("success: " + ret_data);
+        }
+    });
 }
 
 function DeleteRoute (button)
