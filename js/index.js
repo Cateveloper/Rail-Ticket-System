@@ -98,10 +98,10 @@ function add_to_cart(item_id, item_date, last_td, item_price){
 }
 
 function search_confirm(){
-	if(($('#d_time').val() != "" || $('#a_time').val() != "" || $('#d_city').val() != "" || $('#a_city').val() != "") && $('#d_date').val() != "")
+	if($('#d_date').val() != "")
 		return true;
 	else
-		alert("please at least give one condition");
+		alert("please at least give Departure Date");
 	
 	return false;
 }
